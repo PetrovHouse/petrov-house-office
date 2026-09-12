@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-09-12 12:57 EEST",
+  "synced_at": "2026-09-12 13:04 EEST",
   "poll_seconds": 5,
   "stand_still_minutes": 15,
   "hold": [
@@ -27,7 +27,7 @@
       "line1": "Tywin",
       "line2": "status.json → Pages",
       "line3": "kirjoittaa 12:57",
-      "updated_at": "2026-09-12T12:57:09+03:00",
+      "updated_at": "2026-09-12T13:04:15+03:00",
       "working": true
     },
     {
@@ -38,7 +38,7 @@
       "line1": "Daria",
       "line2": "caption ääni opas",
       "line3": "kirjoitti 12:46",
-      "updated_at": "2026-09-12T12:46:56+03:00",
+      "updated_at": "2026-09-12T13:04:15+03:00",
       "working": true
     },
     {
@@ -49,7 +49,7 @@
       "line1": "Lookdev",
       "line2": "Generate",
       "line3": "HOLD 12:57 · kone kiinni",
-      "updated_at": "2026-09-12T12:57:09+03:00",
+      "updated_at": "2026-09-12T13:04:15+03:00",
       "working": false
     },
     {
@@ -60,7 +60,7 @@
       "line1": "Botsmith",
       "line2": "M2 competence peili",
       "line3": "seisoo 12:57 · valvonta",
-      "updated_at": "2026-09-12T12:57:09+03:00",
+      "updated_at": "2026-09-12T13:04:15+03:00",
       "working": false
     }
   ]
