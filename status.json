@@ -1,13 +1,14 @@
 {
-  "synced_at": "2026-09-12 13:28 EEST",
+  "synced_at": "2026-09-12 14:15 EEST",
   "poll_seconds": 5,
   "stand_still_minutes": 15,
   "hold": [
     "Generate",
     "soft launch",
-    "SharePoint"
+    "Preview/Publish",
+    "Domain"
   ],
-  "priority": "Phase C · Carrd setup",
+  "priority": "Phase C soft-ready gap",
   "https_url": "https://petrovhouse.github.io/petrov-house-office/",
   "schema": [
     "topic",
@@ -21,12 +22,12 @@
       "room": "Hand-huone",
       "desk": "phase",
       "line1": "Tywin",
-      "topic": "Phase C valvonta · Pages",
-      "line2": "Carrd setup valvonta",
-      "line3": "valvoo 13:28",
-      "progress": 55,
-      "updated_at": "2026-09-12T13:28:39+03:00",
-      "working": true
+      "topic": "Carrd · odottaa Owner draft",
+      "line2": "Owner tekee Carrd-draftin",
+      "line3": "valvoo 13:40",
+      "progress": 60,
+      "updated_at": "2026-09-12T13:40:40+03:00",
+      "working": false
     },
     {
       "id": "daria",
@@ -34,12 +35,12 @@
       "room": "CEO-huone",
       "desk": "paper",
       "line1": "Daria",
-      "line2": "Carrd-hub draft · soft launch HOLD",
-      "line3": "käynnissä 13:28",
-      "topic": "Carrd setup käynnissä",
-      "progress": 63,
-      "updated_at": "2026-09-12T13:28:39+03:00",
-      "working": true
+      "line2": "Phase C soft-ready gap",
+      "line3": "HOLD soft launch · 85%",
+      "topic": "Phase C soft-ready gap",
+      "progress": 85,
+      "updated_at": "2026-09-12T13:55:42+03:00",
+      "working": false
     },
     {
       "id": "lookdev",
@@ -65,7 +66,7 @@
       "line3": "kesken 15.09. 09:00",
       "progress": 30,
       "updated_at": "2026-09-12T13:15:48+03:00",
-      "working": true
+      "working": false
     }
   ]
 }
