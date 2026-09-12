@@ -1,14 +1,13 @@
 {
-  "synced_at": "2026-09-12 13:20 EEST",
+  "synced_at": "2026-09-12 13:27 EEST",
   "poll_seconds": 5,
   "stand_still_minutes": 15,
   "hold": [
     "Generate",
     "soft launch",
-    "SharePoint",
-    "Carrd setup"
+    "SharePoint"
   ],
-  "priority": "Phase C",
+  "priority": "Phase C · Carrd setup GO",
   "https_url": "https://petrovhouse.github.io/petrov-house-office/",
   "schema": [
     "topic",
@@ -23,10 +22,10 @@
       "desk": "phase",
       "line1": "Tywin",
       "topic": "Phase C valvonta · Pages",
-      "line2": "Pages-synkki (Daria progress)",
-      "line3": "kirjoittaa 13:20",
+      "line2": "Carrd setup GO avattu",
+      "line3": "johtaa 13:27",
       "progress": 55,
-      "updated_at": "2026-09-12T13:20:50+03:00",
+      "updated_at": "2026-09-12T13:27:31+03:00",
       "working": true
     },
     {
@@ -35,11 +34,11 @@
       "room": "CEO-huone",
       "desk": "paper",
       "line1": "Daria",
-      "line2": "soft-ready 14/14 lukittu · setup HOLD",
-      "line3": "peili 13:20",
-      "topic": "Phase C soft-ready",
+      "line2": "Carrd setup GO · soft launch HOLD",
+      "line3": "käynnissä 13:27",
+      "topic": "Carrd setup (hub + About)",
       "progress": 55,
-      "updated_at": "2026-09-12T13:20:50+03:00",
+      "updated_at": "2026-09-12T13:27:31+03:00",
       "working": true
     },
     {
