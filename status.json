@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-09-12 12:37 EEST",
+  "synced_at": "2026-09-12 12:41 EEST",
   "poll_seconds": 5,
   "stand_still_minutes": 15,
   "hold": [
@@ -24,8 +24,8 @@
       "desk": "phase",
       "line1": "Tywin",
       "line2": "status.json → Pages",
-      "line3": "kirjoittaa 12:37",
-      "updated_at": "2026-09-12T12:37:33+03:00",
+      "line3": "kirjoittaa 12:41",
+      "updated_at": "2026-09-12T12:41:05+03:00",
       "working": true
     },
     {
@@ -34,9 +34,9 @@
       "room": "CEO-huone",
       "desk": "paper",
       "line1": "Daria",
-      "line2": "viikko1 caption-pankki EN+FI",
-      "line3": "kirjoittaa 12:37",
-      "updated_at": "2026-09-12T12:37:33+03:00",
+      "line2": "C tilanne lukittu / HOLD",
+      "line3": "kirjoittaa 12:41",
+      "updated_at": "2026-09-12T12:41:05+03:00",
       "working": true
     },
     {
@@ -46,8 +46,8 @@
       "desk": "pc_closed",
       "line1": "Lookdev",
       "line2": "Generate",
-      "line3": "HOLD 12:37 · kone kiinni",
-      "updated_at": "2026-09-12T12:37:33+03:00",
+      "line3": "HOLD 12:41 · kone kiinni",
+      "updated_at": "2026-09-12T12:41:05+03:00",
       "working": false
     },
     {
@@ -58,7 +58,7 @@
       "line1": "Botsmith",
       "line2": "M2 competence peili",
       "line3": "kesken 15.09. 09:00",
-      "updated_at": "2026-09-12T12:37:33+03:00",
+      "updated_at": "2026-09-12T12:41:05+03:00",
       "working": true
     }
   ]
