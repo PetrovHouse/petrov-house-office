@@ -1,5 +1,5 @@
 {
-  "synced_at": "2026-09-12 12:35 EEST",
+  "synced_at": "2026-09-12 12:36 EEST",
   "poll_seconds": 5,
   "stand_still_minutes": 15,
   "hold": [
@@ -15,9 +15,7 @@
     "Generate": "Lookdev HOLD",
     "HR": "Botsmith"
   },
-  "blockers": [
-    "Pages push: live still needs commit (token/browser)"
-  ],
+  "blockers": [],
   "crew": [
     {
       "id": "tywin",
@@ -25,9 +23,9 @@
       "room": "Hand-huone",
       "desk": "phase",
       "line1": "Tywin",
-      "line2": "status.json → Pages push",
-      "line3": "kesken 12:35",
-      "updated_at": "2026-09-12T12:35:17+03:00",
+      "line2": "status.json → Pages",
+      "line3": "kirjoittaa 12:36",
+      "updated_at": "2026-09-12T12:36:28+03:00",
       "working": true
     },
     {
@@ -36,9 +34,9 @@
       "room": "CEO-huone",
       "desk": "paper",
       "line1": "Daria",
-      "line2": "Dayplan + Research17.9 + soft launch portti",
-      "line3": "kirjoittaa 12:35",
-      "updated_at": "2026-09-12T12:35:17+03:00",
+      "line2": "viikko1 caption-pankki EN+FI",
+      "line3": "kirjoittaa 12:36",
+      "updated_at": "2026-09-12T12:36:28+03:00",
       "working": true
     },
     {
@@ -48,8 +46,8 @@
       "desk": "pc_closed",
       "line1": "Lookdev",
       "line2": "Generate",
-      "line3": "HOLD 12:35 · kone kiinni",
-      "updated_at": "2026-09-12T12:35:17+03:00",
+      "line3": "HOLD 12:36 · kone kiinni",
+      "updated_at": "2026-09-12T12:36:28+03:00",
       "working": false
     },
     {
@@ -60,7 +58,7 @@
       "line1": "Botsmith",
       "line2": "M2 competence peili",
       "line3": "kesken 15.09. 09:00",
-      "updated_at": "2026-09-12T12:35:17+03:00",
+      "updated_at": "2026-09-12T12:36:28+03:00",
       "working": true
     }
   ]
