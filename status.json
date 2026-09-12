@@ -1,0 +1,59 @@
+{
+  "synced_at": "2026-09-12 11:48 EEST",
+  "poll_seconds": 5,
+  "stand_still_minutes": 15,
+  "hold": [
+    "Generate",
+    "soft launch",
+    "SharePoint",
+    "Phase C paperi kunnes https"
+  ],
+  "priority": "toimisto-nettisivu https · GitHub Pages",
+  "blockers": [],
+  "crew": [
+    {
+      "id": "tywin",
+      "name": "Tywin",
+      "room": "Hand-huone",
+      "desk": "phase",
+      "line1": "Tywin",
+      "line2": "GitHub Pages https (johtaa)",
+      "line3": "kesken 11:48",
+      "updated_at": "2026-09-12T11:48:05+03:00",
+      "working": true
+    },
+    {
+      "id": "daria",
+      "name": "Daria",
+      "room": "CEO-huone",
+      "desk": "paper",
+      "line1": "Daria",
+      "line2": "status + zip valmis",
+      "line3": "kesken 11:48",
+      "updated_at": "2026-09-12T11:48:05+03:00",
+      "working": true
+    },
+    {
+      "id": "lookdev",
+      "name": "Lookdev",
+      "room": "Lookdev-huone",
+      "desk": "pc_closed",
+      "line1": "Lookdev",
+      "line2": "Generate",
+      "line3": "HOLD 11:48 · kone kiinni",
+      "updated_at": "2026-09-12T11:48:05+03:00",
+      "working": false
+    },
+    {
+      "id": "botsmith",
+      "name": "Botsmith",
+      "room": "HR-huone",
+      "desk": "hr",
+      "line1": "Botsmith",
+      "line2": "M2 competence peili",
+      "line3": "kesken 15.09. 09:00",
+      "updated_at": "2026-09-12T11:48:05+03:00",
+      "working": true
+    }
+  ]
+}

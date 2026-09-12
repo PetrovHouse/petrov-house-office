@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Petrov House — Toimisto</title>
+<style>
+:root{--bg:#0f1117;--wall:#1a1f2b;--desk:#2a2118;--paper:#e8e0d0;--muted:#9aa0a6;--text:#eeeae4;--hold:#f5a524;--ok:#3dd68c;--line:#2e3340}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+header{padding:16px 16px 8px;max-width:1100px;margin:0 auto}
+header h1{margin:0;font-size:1.2rem}
+.sub{color:var(--muted);font-size:.85rem;margin-top:4px}
+.meta{margin-top:8px;font-size:.75rem;color:var(--muted)}
+.meta b{color:var(--hold)}
+.floor{max-width:1100px;margin:8px auto 24px;padding:12px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media(max-width:700px){.floor{grid-template-columns:1fr}}
+.room{background:linear-gradient(180deg,#1e2433 0%,#151a24 55%,#10141c 55%);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:300px;display:flex;flex-direction:column}
+.room h2{margin:0 0 6px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.stage{flex:1;position:relative;min-height:170px;display:flex;align-items:flex-end;justify-content:center}
+.desk{position:absolute;bottom:14px;width:100px;height:26px;background:var(--desk);border-radius:4px;box-shadow:0 7px 0 #1a140f}
+.pc{position:absolute;bottom:40px;width:42px;height:28px;background:#222;border:2px solid #444;border-radius:3px}
+.pc.open{box-shadow:0 0 10px #3dd68c44}
+.pc.closed{height:7px;width:48px;transform:rotate(-8deg)}
+.paper{position:absolute;bottom:42px;width:32px;height:24px;background:var(--paper);border-radius:2px}
+.char{position:absolute;bottom:34px;width:64px;height:100px}
+.char.moving{animation:bob 1.1s ease-in-out infinite}
+.char.still{filter:grayscale(.4);opacity:.82}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.char .body{position:absolute;left:16px;bottom:18px;width:32px;height:40px;border-radius:10px}
+.char .head{position:absolute;left:20px;bottom:52px;width:24px;height:24px;background:#f0e6d8;border-radius:50%}
+.char .hair{position:absolute;left:18px;bottom:64px;width:28px;height:12px;background:#1a1a1a;border-radius:10px 10px 3px 3px}
+.char .arm{position:absolute;width:11px;height:9px;background:#f0e6d8;border-radius:4px;bottom:42px}
+.char .arm.l{left:6px}.char .arm.r{right:6px;left:auto}
+.char.moving .arm{animation:tap .7s steps(2) infinite}
+@keyframes tap{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+.tywin .body{background:#c9a227}.daria .body{background:#6ea8fe}.lookdev .body{background:#b388ff}.botsmith .body{background:#3dd68c}
+.lines{font-size:.82rem;line-height:1.35;padding:4px 2px 0}
+.lines .l1{font-weight:600}
+.lines .l2{color:#d7d4cf}
+.lines .l3{color:var(--hold);font-size:.75rem;margin-top:3px}
+.tag{font-size:.68rem;margin-top:6px}
+.tag.live{color:var(--ok)}.tag.idle{color:var(--hold)}
+footer{max-width:1100px;margin:0 auto 20px;padding:0 16px;color:var(--muted);font-size:.75rem}
+#err{color:#ff8a8a;padding:8px 16px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Petrov House — Toimisto</h1>
+  <div class="sub">Live · haku muutaman sekunnin välein · seisoo jos ei kirjoitusta 15 min</div>
+  <div class="meta">Synkki: <span id="synced">…</span> · <b>HOLD:</b> <span id="holds">…</span> · poll <span id="poll">…</span>s</div>
+</header>
+<div id="err" hidden></div>
+<main class="floor" id="floor"></main>
+<footer>Totuus = status.json. Hahmo liikkuu vain jos rivi päivitetty alle 15 min ja working=true. Lookdev HOLD = kone kiinni.</footer>
+<script>
+const STAND_MS = 15*60*1000;
+function ageMs(iso){ if(!iso) return Infinity; const t=Date.parse(iso); return Number.isNaN(t)?Infinity:(Date.now()-t); }
+function isMoving(c){ if(c.working===false) return false; return ageMs(c.updated_at) < STAND_MS; }
+function prop(c){
+  if(c.desk==='pc_closed') return '<div class="pc closed"></div>';
+  if(c.desk==='paper') return '<div class="paper"></div>';
+  return '<div class="pc open"></div>';
+}
+function roomHTML(c){
+  const move=isMoving(c);
+  return `<section class="room" data-id="${c.id}">
+    <h2>${c.room||c.name}</h2>
+    <div class="stage">
+      <div class="desk"></div>${prop(c)}
+      <div class="char ${c.id} ${move?'moving':'still'}">
+        <div class="hair"></div><div class="head"></div>
+        <div class="arm l"></div><div class="arm r"></div>
+        <div class="body"></div>
+      </div>
+    </div>
+    <div class="lines">
+      <div class="l1">${c.line1||c.name}</div>
+      <div class="l2">${c.line2||''}</div>
+      <div class="l3">${c.line3||''}</div>
+    </div>
+    <div class="tag ${move?'live':'idle'}">${move?'liikkuu (<15 min)':'seisoo (ei kirjoitusta / HOLD)'}</div>
+  </section>`;
+}
+function render(data){
+  document.getElementById('synced').textContent=data.synced_at||'—';
+  document.getElementById('holds').textContent=(data.hold||[]).join(' · ')||'—';
+  document.getElementById('poll').textContent=data.poll_seconds||5;
+  document.getElementById('floor').innerHTML=(data.crew||[]).map(roomHTML).join('');
+  document.getElementById('err').hidden=true;
+}
+let timer=null;
+async function load(){
+  try{
+    const r=await fetch('status.json?ts='+Date.now(),{cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    render(data);
+    const sec=Math.max(2, Number(data.poll_seconds)||5)*1000;
+    if(timer) clearInterval(timer);
+    timer=setInterval(load, sec);
+  }catch(e){
+    try{
+      const emb=document.getElementById('embed');
+      if(emb){ render(JSON.parse(emb.textContent)); }
+    }catch(_){}
+    const el=document.getElementById('err');
+    el.hidden=false;
+    el.textContent='Live-haku ei onnistu (tarvitaan https / palvelin). Näytetään viimeisin upotus.';
+  }
+}
+load();
+</script>
+<script type="application/json" id="embed">{"synced_at": "2026-09-12 11:48 EEST", "poll_seconds": 5, "stand_still_minutes": 15, "hold": ["Generate", "soft launch", "SharePoint", "Phase C paperi kunnes https"], "priority": "toimisto-nettisivu https · GitHub Pages", "blockers": [], "crew": [{"id": "tywin", "name": "Tywin", "room": "Hand-huone", "desk": "phase", "line1": "Tywin", "line2": "GitHub Pages https (johtaa)", "line3": "kesken 11:48", "updated_at": "2026-09-12T11:48:05+03:00", "working": true}, {"id": "daria", "name": "Daria", "room": "CEO-huone", "desk": "paper", "line1": "Daria", "line2": "status + zip valmis", "line3": "kesken 11:48", "updated_at": "2026-09-12T11:48:05+03:00", "working": true}, {"id": "lookdev", "name": "Lookdev", "room": "Lookdev-huone", "desk": "pc_closed", "line1": "Lookdev", "line2": "Generate", "line3": "HOLD 11:48 · kone kiinni", "updated_at": "2026-09-12T11:48:05+03:00", "working": false}, {"id": "botsmith", "name": "Botsmith", "room": "HR-huone", "desk": "hr", "line1": "Botsmith", "line2": "M2 competence peili", "line3": "kesken 15.09. 09:00", "updated_at": "2026-09-12T11:48:05+03:00", "working": true}]}</script>
+</body>
+</html>
