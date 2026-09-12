@@ -1,14 +1,21 @@
 {
-  "synced_at": "2026-09-12 11:48 EEST",
+  "synced_at": "2026-09-12 12:32 EEST",
   "poll_seconds": 5,
   "stand_still_minutes": 15,
   "hold": [
     "Generate",
     "soft launch",
-    "SharePoint",
-    "Phase C paperi kunnes https"
+    "Carrd setup"
   ],
-  "priority": "toimisto-nettisivu https · GitHub Pages",
+  "priority": "Phase C",
+  "live_url": "https://petrovhouse.github.io/petrov-house-office/",
+  "writers": {
+    "status.json": "Tywin (Hand) · Toimisto Heartbeat 15min · Daria peilaa Dayplan-muutokset",
+    "Dayplan / Phase C Docs": "Daria (CEO)",
+    "index.html": "Tywin (Hand) vain tarvittaessa",
+    "Generate stills": "Lookdev — HOLD",
+    "HR / competence": "Botsmith"
+  },
   "blockers": [],
   "crew": [
     {
@@ -17,9 +24,9 @@
       "room": "Hand-huone",
       "desk": "phase",
       "line1": "Tywin",
-      "line2": "GitHub Pages https (johtaa)",
-      "line3": "kesken 11:48",
-      "updated_at": "2026-09-12T11:48:05+03:00",
+      "line2": "status.json → Pages + C valvonta",
+      "line3": "kirjoittaa 12:32",
+      "updated_at": "2026-09-12T12:32:03+03:00",
       "working": true
     },
     {
@@ -28,9 +35,9 @@
       "room": "CEO-huone",
       "desk": "paper",
       "line1": "Daria",
-      "line2": "status + zip valmis",
-      "line3": "kesken 11:48",
-      "updated_at": "2026-09-12T11:48:05+03:00",
+      "line2": "Phase C Docs/Dayplan (kirjoittaa)",
+      "line3": "kesken 12:32",
+      "updated_at": "2026-09-12T12:32:03+03:00",
       "working": true
     },
     {
@@ -40,8 +47,8 @@
       "desk": "pc_closed",
       "line1": "Lookdev",
       "line2": "Generate",
-      "line3": "HOLD 11:48 · kone kiinni",
-      "updated_at": "2026-09-12T11:48:05+03:00",
+      "line3": "HOLD 12:32 · kone kiinni",
+      "updated_at": "2026-09-12T12:32:03+03:00",
       "working": false
     },
     {
@@ -52,7 +59,7 @@
       "line1": "Botsmith",
       "line2": "M2 competence peili",
       "line3": "kesken 15.09. 09:00",
-      "updated_at": "2026-09-12T11:48:05+03:00",
+      "updated_at": "2026-09-12T12:32:03+03:00",
       "working": true
     }
   ]
